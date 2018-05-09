@@ -25,7 +25,7 @@ var Engine = (function(global) {
         lastTime;
 
     canvas.width = 505;
-    canvas.height = 606;
+    canvas.height = 630;
     doc.body.appendChild(canvas);
 
        
@@ -122,10 +122,29 @@ var Engine = (function(global) {
         
         // Before drawing, clear existing canvas
         ctx.clearRect(0,0,canvas.width,canvas.height)
-        // text in the canvas
-        ctx.font = lifeTextSize;
-        ctx.fillStyle = lifeTextColor;
-        ctx.fillText(lifeMessage,xLifePosition,yLifePosition);
+
+        class CanvasText {
+            constructor(x, y, color, size, message, num=""){
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.size = size;
+                this.num = num;
+                this.message = `${message} ${num}`;
+                
+            }
+
+            draw(){
+
+                ctx.font = this.size;
+                ctx.fillStyle = this.color;
+                ctx.fillText(this.message,this.x,this.y);
+            }
+        }
+
+        var life = new CanvasText(20, 30, "green", "20px tahoma","Life :",5);
+        life.draw();
+
  
         /* Loop through the number of rows and columns we've defined above
          * and, using the rowImages array, draw the correct image for that

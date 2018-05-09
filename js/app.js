@@ -58,7 +58,7 @@ class Player {
             if(distance < 40){
                 this.x = 200;
                 this.y = 380;
-                lifeNum-= 1;
+                //life.num -= 1;
             }            
         });
 
@@ -101,6 +101,11 @@ var allEnemies = [
 var player = new Player();
 
 
+
+
+
+/*
+
 //life text 
 var xLifePosition = 20;
 var yLifePosition = 30;
@@ -108,6 +113,24 @@ var lifeNum = 5;
 var lifeTextColor = "green";
 var lifeTextSize = "20px tahoma";
 var lifeMessage = `Life : ${lifeNum}`;
+
+//score text
+var xScorePosition = 400;
+var yScorePosition = 30;
+var scoreNum = 0;
+var scoreTextColor = "brown";
+var scoreTextSize = "20px tahoma";
+var scoreMessage = `Score : ${scoreNum}`;
+
+//copyright message
+var xCopyPosition = 120;
+var yCopyPosition = 615;
+var copyNum = 0;
+var copyTextColor = "black";
+var copyTextSize = "20px tahoma";
+var copyMessage = `Powered by Mohamed Shawky`;
+
+*/
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
