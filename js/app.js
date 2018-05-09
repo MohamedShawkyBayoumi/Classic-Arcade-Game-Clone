@@ -52,9 +52,17 @@ class Player {
             return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
         }
 
-        if(getDistance(player.x, player.y,allEnemies[0].x, allEnemies[0].y)){
-            console.log("it works now");
-        }
+
+        allEnemies.forEach(enemy => {
+            var distance = getDistance(this.x, this.y,enemy.x, enemy.y);
+            if(distance < 40){
+                this.x = 200;
+                this.y = 380;
+            }            
+        });
+
+        
+
 
     }
 
