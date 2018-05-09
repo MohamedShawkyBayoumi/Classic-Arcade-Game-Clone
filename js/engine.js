@@ -28,6 +28,8 @@ var Engine = (function(global) {
     canvas.height = 606;
     doc.body.appendChild(canvas);
 
+       
+
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
      */
@@ -120,7 +122,11 @@ var Engine = (function(global) {
         
         // Before drawing, clear existing canvas
         ctx.clearRect(0,0,canvas.width,canvas.height)
-
+        // text in the canvas
+        ctx.font = lifeTextSize;
+        ctx.fillStyle = lifeTextColor;
+        ctx.fillText(lifeMessage,xLifePosition,yLifePosition);
+ 
         /* Loop through the number of rows and columns we've defined above
          * and, using the rowImages array, draw the correct image for that
          * portion of the "grid"

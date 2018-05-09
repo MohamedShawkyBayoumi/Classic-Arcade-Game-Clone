@@ -58,10 +58,10 @@ class Player {
             if(distance < 40){
                 this.x = 200;
                 this.y = 380;
+                lifeNum-= 1;
             }            
         });
 
-        
 
 
     }
@@ -101,8 +101,13 @@ var allEnemies = [
 var player = new Player();
 
 
-
-
+//life text 
+var xLifePosition = 20;
+var yLifePosition = 30;
+var lifeNum = 5;
+var lifeTextColor = "green";
+var lifeTextSize = "20px tahoma";
+var lifeMessage = `Life : ${lifeNum}`;
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
