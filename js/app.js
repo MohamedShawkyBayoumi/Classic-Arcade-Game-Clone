@@ -53,14 +53,19 @@ class Player {
         }
 
         var life = document.querySelector('.life');
-        life.innerHTML = `Life : ${this.life}`;
+        life.innerHTML = `Life x${this.life}`;
 
         allEnemies.forEach(enemy => {
             var distance = getDistance(this.x, this.y,enemy.x, enemy.y);
             if(distance < 40){
                 this.x = 200;
                 this.y = 380;
-                life.innerHTML = `Life : ${this.life -=1}`;
+                
+                if(this.life == 0){
+                    this.life = 0;
+                } else {
+                    life.innerHTML = `Life x${this.life -=1}`;
+                }
             }            
         });
 
@@ -134,6 +139,7 @@ class Player {
             this.y += 80;
         }
 
+        // Arrows for mobile devices
 
         var mobileUp = document.querySelector('.mobile-up');
         var mobileLeft = document.querySelector('.mobile-left');

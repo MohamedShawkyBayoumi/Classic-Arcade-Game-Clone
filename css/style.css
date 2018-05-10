@@ -1,14 +1,23 @@
 body {
     text-align: center;
-    background: linear-gradient(#e9e9e9, #fff);
+    background: #e9e9e9;
     background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: row;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.container {
+
+}
+
+canvas {
+	margin-left: 40px;
 }
 
 
 .select-player {
-	position: absolute;
-	left: 150px;
-	top: 50px;
 	background: linear-gradient(to bottom right, #f4f4f4, #eeeeee);
 	border-radius: 15px;
 	padding: 0 15px;
@@ -24,26 +33,54 @@ body {
 	border-bottom: 3px solid #a5a5a5;
 }
 
-
-.life-div {
-	position: absolute;
-	left: 150px;
-	top: 170px;
+.life {
 	background: linear-gradient(to bottom right, #f4f4f4, #eeeeee);
 	border-radius: 15px;
-	padding: 0 15px;
+	padding: 15px 15px;
 	border: 1px solid #e3e2e2;
 	font-family: tahoma;
 	letter-spacing: 2px;
+	font-size: 20px;
+	color: #bc1141;
+}
+
+
+.life-div {
+	margin: 50px 0 30px 0;
 }
 
 .mobile-arrows {
-	position: absolute;
-	top: 250px;
-	left: 150px;
+
+	margin: 10px 60px;
 }
 
 .mobile-arrows img {
 	cursor: pointer;
 	width: 50px;
+}
+
+
+@media screen and (max-width: 700px){
+	body {
+		width: 100%;
+	}
+	canvas {
+		width: 350px;
+		height: 406px;
+		margin-left: 25px;
+	}
+
+	.select-player img {
+		width: 30px;
+	}
+
+	.mobile-arrows img {
+		width: 30px;
+	}
+
+	.life {
+		font-size: 18px;
+	}
+
+
 }
