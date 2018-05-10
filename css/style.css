@@ -37,4 +37,13 @@ body {
 	letter-spacing: 2px;
 }
 
+.mobile-arrows {
+	position: absolute;
+	top: 250px;
+	left: 150px;
+}
 
+.mobile-arrows img {
+	cursor: pointer;
+	width: 50px;
+}

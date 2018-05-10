@@ -133,7 +133,36 @@ class Player {
         }else if(allowedKeys == "down" && this.y < 350){
             this.y += 80;
         }
+
+
+        var mobileUp = document.querySelector('.mobile-up');
+        var mobileLeft = document.querySelector('.mobile-left');
+        var mobileDown = document.querySelector('.mobile-down');
+        var mobileRight = document.querySelector('.mobile-right');
+
+        mobileUp.addEventListener('click',() => {
+            if(this.y > 0){
+                this.y -= 80;
+            }
+        });
+        mobileLeft.addEventListener('click',() => {
+            if(this.x > 0){
+                this.x -= 100;
+            }
+        });
+        mobileDown.addEventListener('click',() => {
+            if(this.y < 350){
+                this.y += 80;
+            }
+        });
+        mobileRight.addEventListener('click',() => {
+            if(this.x < 400){
+                this.x += 100;
+            }
+        });
         
+
+
     }
 }
 
