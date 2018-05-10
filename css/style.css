@@ -51,7 +51,7 @@ canvas {
 
 .mobile-arrows {
 
-	margin: 10px 60px;
+	margin: 20px 60px;
 }
 
 .mobile-arrows img {
@@ -75,7 +75,7 @@ canvas {
 	}
 
 	.mobile-arrows img {
-		width: 30px;
+		width: 70px;
 	}
 
 	.life {
