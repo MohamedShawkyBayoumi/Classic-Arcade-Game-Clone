@@ -6,7 +6,7 @@ var Enemy = function(y, speed) {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
-    this.x = 0;
+    this.x = Math.floor(Math.random() * 500 + 200);
     this.y = y;
     this.speed = speed;
 };
@@ -44,7 +44,6 @@ class Player {
     }
 
     update(dt){
-        //this.x += 1;
         // (Handles collision with the Player)
         var getDistance = (x1, y1, x2, y2) => {
             var xDistance = x2 - x1;
@@ -52,13 +51,21 @@ class Player {
             return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
         }
 
+        var lifeCounter = 5;
+        function lifeC(){
+            return lifeCounter -= 1;
+        }
+        var life = document.querySelector('.life');
+        life.innerHTML = `life : ${lifeCounter}`;
 
         allEnemies.forEach(enemy => {
             var distance = getDistance(this.x, this.y,enemy.x, enemy.y);
             if(distance < 40){
                 this.x = 200;
                 this.y = 380;
-                //life.num -= 1;
+
+                lifeC();
+                life.innerHTML = `life : ${lifeCounter}`;
             }            
         });
 
@@ -92,13 +99,21 @@ class Player {
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
+
+for(var i=0; i < 4; i++){
+    var enemyS = Math.floor(Math.random() * 500 + 200);
+}
+
+
 var allEnemies = [
     new Enemy(60,450),
     new Enemy(145,300),
     new Enemy(230,400)
 ];
 // Place the player object in a variable called player
+
 var player = new Player();
+
 
 
 

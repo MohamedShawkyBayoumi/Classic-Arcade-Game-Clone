@@ -123,6 +123,7 @@ var Engine = (function(global) {
         // Before drawing, clear existing canvas
         ctx.clearRect(0,0,canvas.width,canvas.height)
 
+        /*
         class CanvasText {
             constructor(x, y, color, size, message, num=""){
                 this.x = x;
@@ -142,8 +143,9 @@ var Engine = (function(global) {
             }
         }
 
-        var life = new CanvasText(20, 30, "green", "20px tahoma","Life :",5);
+        var life = new CanvasText(130, 610, "green", "16px tahoma","Powered by © Mohamed Shawky");
         life.draw();
+        */
 
  
         /* Loop through the number of rows and columns we've defined above
@@ -198,7 +200,11 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/char-cat-girl.png',
+        'images/char-horn-girl.png',
+        'images/char-pink-girl.png',
+        'images/char-princess-girl.png'
     ]);
     Resources.onReady(init);
 
