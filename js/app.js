@@ -41,6 +41,7 @@ class Player {
         this.sprite = 'images/char-boy.png';
         this.x = 200;
         this.y = 380;
+        this.life = 5;
     }
 
     update(dt){
@@ -51,24 +52,68 @@ class Player {
             return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
         }
 
-        var lifeCounter = 5;
-        function lifeC(){
-            return lifeCounter -= 1;
-        }
         var life = document.querySelector('.life');
-        life.innerHTML = `life : ${lifeCounter}`;
+        life.innerHTML = `Life : ${this.life}`;
 
         allEnemies.forEach(enemy => {
             var distance = getDistance(this.x, this.y,enemy.x, enemy.y);
             if(distance < 40){
                 this.x = 200;
                 this.y = 380;
-
-                lifeC();
-                life.innerHTML = `life : ${lifeCounter}`;
+                life.innerHTML = `Life : ${this.life -=1}`;
             }            
         });
 
+
+        // select character
+        var charBoy = document.querySelector('.char-boy');
+        var charCatGirl = document.querySelector('.char-cat-girl');
+        var charHornGirl = document.querySelector('.char-horn-girl');
+        var charPinkGirl = document.querySelector('.char-pink-girl');
+        var charPrincessGirl = document.querySelector('.char-princess-girl');
+
+        charBoy.addEventListener('click',() =>{
+            charBoy.classList.toggle("underline");
+            charCatGirl.classList.remove("underline");
+            charHornGirl.classList.remove("underline");
+            charPinkGirl.classList.remove("underline");
+            charPrincessGirl.classList.remove('underline');
+            this.sprite = "images/char-boy.png";
+        });
+        charCatGirl.addEventListener('click',() => {
+            charCatGirl.classList.toggle("underline");
+            charBoy.classList.remove("underline");
+            charHornGirl.classList.remove("underline");
+            charPinkGirl.classList.remove("underline");
+            charPrincessGirl.classList.remove('underline');
+            this.sprite = "images/char-cat-girl.png";
+
+        });
+
+        charHornGirl.addEventListener('click',() => {
+            charHornGirl.classList.toggle("underline");
+            charBoy.classList.remove("underline");
+            charCatGirl.classList.remove("underline");
+            charPinkGirl.classList.remove("underline");
+            charPrincessGirl.classList.remove('underline');
+            this.sprite = "images/char-horn-girl.png";
+        });
+        charPinkGirl.addEventListener('click',() => {
+            charPinkGirl.classList.toggle("underline");
+             charBoy.classList.remove("underline");
+            charCatGirl.classList.remove("underline");
+            charHornGirl.classList.remove("underline");
+            charPrincessGirl.classList.remove('underline');
+            this.sprite = "images/char-pink-girl.png";
+        });
+        charPrincessGirl.addEventListener('click',() => {
+            charPrincessGirl.classList.toggle('underline');
+            charBoy.classList.remove("underline");
+            charCatGirl.classList.remove("underline");
+            charHornGirl.classList.remove("underline");
+            charPinkGirl.classList.remove("underline");
+            this.sprite = "images/char-princess-girl.png";
+        });
 
 
     }
@@ -113,7 +158,6 @@ var allEnemies = [
 // Place the player object in a variable called player
 
 var player = new Player();
-
 
 
 
