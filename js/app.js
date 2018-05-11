@@ -239,6 +239,7 @@ document.addEventListener('keyup', function(e) {
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
+    playAudioBackground();
 });
 
 // This is for run mobile arrows event listeners
@@ -250,5 +251,3 @@ function playAudioBackground(){
     var bgAudio = document.querySelector('.bg-audio');
     return bgAudio.play();
 }
-playAudioBackground();
-
