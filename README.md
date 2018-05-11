@@ -12,6 +12,8 @@
 
 -you shouldn't crash any bugs to don't lose lives
 
+-you should arrive at the top to win
+
 -you should play it on any devices , it's responsive for all devices
 
 ## Code_Dependencies
