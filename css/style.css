@@ -74,6 +74,7 @@ canvas {
 	border: none;
 	color: #fff;
 	margin-left: 5px;
+	font-family: tahoma;
 }
 
 .play-again:hover {
@@ -83,6 +84,55 @@ canvas {
 .play-again:active {
 	background-color: #1fae5b;
 }
+
+
+
+
+
+.modal {
+    display: none;
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding-top: 150px;
+}
+
+.m-content {
+    margin-top: 100px;
+    background-color: #fff;
+    margin: 0 auto;
+    width: 40%;
+    padding: 30px;
+}
+
+.m-content h2 {
+	font-family: tahoma;
+	letter-spacing: 5px;
+	color: #1fae5b;
+}
+
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+
+}
+
+
+.close:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+
 
 
 
@@ -185,6 +235,36 @@ canvas {
 	.life {
 		font-size: 18px;
 	}
+
+
+
+.modal {
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        padding-top: 150px;
+    }
+
+    .m-content {
+        margin-top: 70px;
+        margin: 0 auto;
+        width: 80%;
+        padding: 30px;
+    }
+
+    .m-content h2 {
+        font-size: 18px;
+    }
+
+    .m-content p {
+        font-size: 14px;
+    }
+
+    .play-again {
+        padding: 4px 7px 4px 7px;
+        font-size: 14px;
+    }
+
 
 
 

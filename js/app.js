@@ -238,11 +238,15 @@ class Gem {
                 score.innerHTML = `Score :${this.score +=100}`;
             }
 
-            if(this.score == 1200){
+            if(player.y == 60){
+                var modal = document.querySelector('.modal');
+                modal.style.display = 'block';
                 var winningSound = document.querySelector('.winning-sound');
                 winningSound.innerHTML = '<audio class="crash-sound" autoplay><source src="images/winning.mp3" type="audio/mpeg"></audio>';
                 var winMessage = document.querySelector('.win');
-                winMessage.innerHTML = '<span class="win-key">You are the winner<img src="images/small-key.png" alt="with Key"></span><button class="play-again">Play Again!</button>';
+                winMessage.innerHTML = `<span class="win-key">You are the winner<img src="images/small-key.png" alt="with Key"></span>
+                <p class="score">Your score is ${this.score}</p>
+                `;
             }
 
     }
