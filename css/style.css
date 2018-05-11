@@ -3,7 +3,8 @@ body {
     background: #e9e9e9;
     background-repeat: no-repeat;
     display: flex;
-    flex-wrap: row;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 0 auto;
     width: 70%;
 }
@@ -63,24 +64,44 @@ canvas {
 @media screen and (max-width: 700px){
 	body {
 		width: 100%;
+		flex-direction: column;
 	}
+
+	.container {
+		order: 1;
+	}
+
 	canvas {
 		width: 350px;
 		height: 406px;
-		margin-left: 25px;
+		margin-left: 5px;
+		order: 2;
+	}
+
+	.select-player {
+		padding-left: 0;
+		width: 300px;
+		margin: 0 auto;
 	}
 
 	.select-player img {
 		width: 30px;
 	}
 
+	.mobile-arrows {
+		order: 3;
+	}
+
+
 	.mobile-arrows img {
 		width: 80px;
 	}
 
+
 	.life {
 		font-size: 18px;
 	}
+
 
 
 }
