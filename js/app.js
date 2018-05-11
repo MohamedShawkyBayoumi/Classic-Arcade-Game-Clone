@@ -1,3 +1,10 @@
+// pythagorean theorem for collisions
+var getDistance = (x1, y1, x2, y2) => {
+    var xDistance = x2 - x1;
+    var yDistance = y2 - y1;
+    return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
+}
+
 // Enemies our player must avoid
 var Enemy = function(y, speed) {
     // Variables applied to each of our instances go here,
@@ -46,11 +53,7 @@ class Player {
 
     update(dt){
         // (Handles collision with the Player)
-        var getDistance = (x1, y1, x2, y2) => {
-            var xDistance = x2 - x1;
-            var yDistance = y2 - y1;
-            return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
-        }
+
 
         var life = document.querySelector('.life');
         life.innerHTML = `Life x${this.life}`;
@@ -67,7 +70,7 @@ class Player {
                 } else {
                     life.innerHTML = `Life x${this.life -=1}`;
                 }
-            }            
+            }    
         });
 
 
@@ -188,8 +191,12 @@ class Gem {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
 
-    update(){
-
+    update(dt){
+        var gemDistance = getDistance(this.x, this.y, player.x, player.y);
+        if(gemDistance < 30){
+            this.x = 200;
+            this.sprite = 'images/gem-green.png';
+        }
     }
 }
 
@@ -210,7 +217,7 @@ var allEnemies = [
 var player = new Player();
 
 // instantiate golds
-var gemBlue = new Gem(120, 450);
+var gemBlue = new Gem(120, 100);
 
 
 
