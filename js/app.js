@@ -193,9 +193,16 @@ class Gem {
 
     update(dt){
         var gemDistance = getDistance(this.x, this.y, player.x, player.y);
-        if(gemDistance < 30){
-            this.x = 200;
+        if(gemDistance < 60){
+            this.x = 400;
+            this.y = 170;
             this.sprite = 'images/gem-green.png';
+            var crashSounds = document.querySelector('.crash-sounds');
+                crashSounds.innerHTML = '<audio class="crash-sound" autoplay><source src="images/gold.mp3" type="audio/mpeg"></audio>';
+        } else if(gemDistance < 40){ // I can't handle it here ? what should I write in the condition ?
+            this.sprite = 'images/gem-orange.png';
+            this.x = 200;
+            this.y = 200;
         }
     }
 }
@@ -217,7 +224,7 @@ var allEnemies = [
 var player = new Player();
 
 // instantiate golds
-var gemBlue = new Gem(120, 100);
+var gem = new Gem(120, 100);
 
 
 
