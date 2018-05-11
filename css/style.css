@@ -35,7 +35,7 @@ canvas {
 	border-bottom: 3px solid #a5a5a5;
 }
 
-.life {
+.life,.score {
 	background: linear-gradient(to bottom right, #f4f4f4, #eeeeee);
 	border-radius: 15px;
 	padding: 15px 15px;

@@ -157,6 +157,7 @@ class Player {
         mobileUp.addEventListener('click',() => {
             if(this.y > 0){
                 this.y -= 80;
+                playAudioBackground();
             }
         });
         mobileLeft.addEventListener('click',() => {
@@ -185,6 +186,7 @@ class Gem {
         this.sprite = 'images/gem-blue.png';
         this.x = x;
         this.y = y;
+        this.score = 0;
     }
 
     render(){
@@ -193,17 +195,43 @@ class Gem {
 
     update(dt){
         var gemDistance = getDistance(this.x, this.y, player.x, player.y);
+
+        var score = document.querySelector('.score');
+        score.innerHTML = `Score :${this.score}`;
+
         if(gemDistance < 60){
-            this.x = 400;
-            this.y = 170;
-            this.sprite = 'images/gem-green.png';
+            const sprites = [
+              'images/gem-blue.png',
+              'images/gem-green.png',
+              'images/gem-orange.png'
+            ];
+
+            this.sprite = sprites[Math.floor(Math.random() * sprites.length)]; // get random item from an array
+
+            const positions = [
+              {
+                x: 400,
+                y: 170
+              },
+              {
+                x: 200,
+                y: 200
+              },
+              {
+                x: 120,
+                y: 100
+              }
+            ];
+
+            const position = positions[Math.floor(Math.random() * positions.length)]; // get random position from positions array
+            this.x = position.x; // set random position x
+            this.y = position.y; // set random position y
             var crashSounds = document.querySelector('.crash-sounds');
                 crashSounds.innerHTML = '<audio class="crash-sound" autoplay><source src="images/gold.mp3" type="audio/mpeg"></audio>';
-        } else if(gemDistance < 40){ // I can't handle it here ? what should I write in the condition ?
-            this.sprite = 'images/gem-orange.png';
-            this.x = 200;
-            this.y = 200;
-        }
+                score.innerHTML = `Score :${this.score +=100}`;
+            }
+
+
     }
 }
 
@@ -249,5 +277,6 @@ player.mobileKeys();
 // play background sound
 function playAudioBackground(){
     var bgAudio = document.querySelector('.bg-audio');
+    bgAudio.volume = 0.1;
     return bgAudio.play();
 }
