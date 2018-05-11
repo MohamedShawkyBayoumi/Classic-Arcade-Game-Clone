@@ -47,7 +47,7 @@ canvas {
 
 }
 
-
+/*
 .g-over {
 	background: #f4f4f4;
 	padding: 10px 15px;
@@ -61,13 +61,15 @@ canvas {
 .game-over {
 	margin-top: 30px;
 }
+*/
+
 
 .life-div {
 	margin: 0 auto
 	width: 300px;
 }
 
-.play-again {
+.play-again,.play-again-over {
 	cursor: pointer;
 	padding: 8px;
 	background: #1fae5b;
@@ -77,11 +79,11 @@ canvas {
 	font-family: tahoma;
 }
 
-.play-again:hover {
+.play-again:hover,.play-again-over:hover {
 	background-color: #26cd6d;
 }
 
-.play-again:active {
+.play-again:active,.play-again-over:active {
 	background-color: #1fae5b;
 }
 
@@ -117,7 +119,7 @@ canvas {
 }
 
 
-.close {
+.close,.close-over {
     color: #aaaaaa;
     float: right;
     text-align: center;
@@ -127,11 +129,42 @@ canvas {
 }
 
 
-.close:hover {
+.close:hover,.close:hover {
     color: #000;
     cursor: pointer;
 }
 
+
+
+/* The game over model */
+
+
+.modal-over {
+    display: none;
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    padding-top: 150px;
+}
+
+.m-content-over {
+    margin-top: 100px;
+    background-color: #fff;
+    margin: 0 auto;
+    width: 40%;
+    padding: 30px;
+}
+
+.m-content-over h2 {
+	font-family: tahoma;
+	letter-spacing: 5px;
+	color: #1fae5b;
+}
 
 
 
@@ -238,7 +271,7 @@ canvas {
 
 
 
-.modal {
+	.modal {
         height: 100%;
         width: 100%;
         overflow: auto;
@@ -265,6 +298,24 @@ canvas {
         font-size: 14px;
     }
 
+
+	.modal-over {
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        padding-top: 150px;
+    }
+
+    .m-content-over {
+        margin-top: 70px;
+        margin: 0 auto;
+        width: 80%;
+        padding: 30px;
+    }
+
+    .m-content-over h2 {
+        font-size: 18px;
+    }
 
 
 

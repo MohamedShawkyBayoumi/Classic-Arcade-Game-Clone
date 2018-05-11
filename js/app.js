@@ -1,3 +1,10 @@
+var playAgain = document.querySelector('.play-again');
+var close = document.querySelector('.close');
+var playAgainOver = document.querySelector('.play-again-over');
+var closeOver = document.querySelector('.close-over');
+var modal = document.querySelector('.modal');
+var modalOver = document.querySelector('.modal-over');
+
 // pythagorean theorem for collisions
 var getDistance = (x1, y1, x2, y2) => {
     var xDistance = x2 - x1;
@@ -70,11 +77,19 @@ class Player {
                 } else {
                     life.innerHTML = `Life x${this.life -=1}`;
                     if(this.life == 0){
+                        this.life = 5;
+                        gem.score = 0;
+                        modalOver.style.display = 'block';
+                        playAgainOver.addEventListener('click',() => {
+                            modalOver.style.display = 'none';
+                        });
+
+                        closeOver.addEventListener('click',() => {
+                            modalOver.style.display = 'none';
+                        });
                         // Game over sound
                         crashSounds.innerHTML = '<audio class="crash-sound" autoplay><source src="images/over.mp3" type="audio/mpeg"></audio>';
-                        //init();
-                        var gameOver = document.querySelector('.game-over');
-                        gameOver.innerHTML = '<span class="g-over">Game Over</span><button class="play-again">Play Again!</button>';
+
                     }
                 }
             }    
@@ -239,7 +254,6 @@ class Gem {
             }
 
             if(player.y == 60){
-                var modal = document.querySelector('.modal');
                 modal.style.display = 'block';
                 var winningSound = document.querySelector('.winning-sound');
                 winningSound.innerHTML = '<audio class="crash-sound" autoplay><source src="images/winning.mp3" type="audio/mpeg"></audio>';
@@ -247,6 +261,19 @@ class Gem {
                 winMessage.innerHTML = `<span class="win-key">You are the winner<img src="images/small-key.png" alt="with Key"></span>
                 <p class="score">Your score is ${this.score}</p>
                 `;
+                player.x = 200;
+                player.y = 380;
+                player.life = 5;
+                this.score = 0;
+
+                playAgain.addEventListener('click',() => {
+                    modal.style.display = 'none';
+                });
+
+                close.addEventListener('click',() => {
+                    modal.style.display = 'none';
+                });
+                
             }
 
     }
