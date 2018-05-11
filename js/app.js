@@ -69,6 +69,13 @@ class Player {
                     this.life = 0;
                 } else {
                     life.innerHTML = `Life x${this.life -=1}`;
+                    if(this.life == 0){
+                        // Game over sound
+                        crashSounds.innerHTML = '<audio class="crash-sound" autoplay><source src="images/over.mp3" type="audio/mpeg"></audio>';
+                        //init();
+                        var gameOver = document.querySelector('.game-over');
+                        gameOver.innerHTML = '<span class="g-over">Game Over</span><button class="play-again">Play Again!</button>';
+                    }
                 }
             }    
         });
@@ -183,7 +190,7 @@ class Player {
 // Gem class
 class Gem {
     constructor(x, y){
-        this.sprite = 'images/gem-blue.png';
+        this.sprite = 'images/gem-orange.png';
         this.x = x;
         this.y = y;
         this.score = 0;
@@ -231,6 +238,12 @@ class Gem {
                 score.innerHTML = `Score :${this.score +=100}`;
             }
 
+            if(this.score == 1200){
+                var winningSound = document.querySelector('.winning-sound');
+                winningSound.innerHTML = '<audio class="crash-sound" autoplay><source src="images/winning.mp3" type="audio/mpeg"></audio>';
+                var winMessage = document.querySelector('.win');
+                winMessage.innerHTML = '<span class="win-key">You are the winner<img src="images/small-key.png" alt="with Key"></span><button class="play-again">Play Again!</button>';
+            }
 
     }
 }

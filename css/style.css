@@ -48,9 +48,57 @@ canvas {
 }
 
 
+.g-over {
+	background: #f4f4f4;
+	padding: 10px 15px;
+	border: 1px solid #dbdbdb;
+	font-family: tahoma;
+	letter-spacing: 2px;
+	font-size: 20px;
+	color: #3511bc;	
+}
+
+.game-over {
+	margin-top: 30px;
+}
+
 .life-div {
 	margin: 0 auto
 	width: 300px;
+}
+
+.play-again {
+	cursor: pointer;
+	padding: 8px;
+	background: #1fae5b;
+	border: none;
+	color: #fff;
+	margin-left: 5px;
+}
+
+.play-again:hover {
+	background-color: #26cd6d;
+}
+
+.play-again:active {
+	background-color: #1fae5b;
+}
+
+
+
+.win img {
+	width: 20px;
+	margin-top: -10px;
+}
+
+.win-key {
+	background: #f4f4f4;
+	padding: 5px 15px;
+	border: 1px solid #dbdbdb;
+	font-family: tahoma;
+	letter-spacing: 2px;
+	font-size: 20px;
+	color: #e4a52a;	
 }
 
 .mobile-arrows {
