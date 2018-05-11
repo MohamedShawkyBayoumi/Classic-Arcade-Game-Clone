@@ -196,7 +196,6 @@ class Gem {
 
 
 
-
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 
@@ -230,3 +229,12 @@ document.addEventListener('keyup', function(e) {
 
 // This is for run mobile arrows event listeners
 player.mobileKeys();
+
+
+// play background sound
+function playAudioBackground(){
+    var bgAudio = document.querySelector('.bg-audio');
+    return bgAudio.play();
+}
+playAudioBackground();
+
