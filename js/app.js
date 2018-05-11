@@ -60,7 +60,8 @@ class Player {
             if(distance < 40){
                 this.x = 200;
                 this.y = 380;
-                
+                var crashSound = document.querySelector('.crash-sound');
+                crashSound.innerHTML = '<source src="images/crash.mp3" type="audio/mpeg">';
                 if(this.life == 0){
                     this.life = 0;
                 } else {
