@@ -25,7 +25,7 @@ var Engine = (function(global) {
         lastTime;
 
     canvas.width = 505;
-    canvas.height = 606;
+    canvas.height = 635;
     doc.body.appendChild(canvas);
 
        
@@ -123,15 +123,14 @@ var Engine = (function(global) {
         // Before drawing, clear existing canvas
         ctx.clearRect(0,0,canvas.width,canvas.height)
 
-        /*
+        
         class CanvasText {
-            constructor(x, y, color, size, message, num=""){
+            constructor(x, y, color, size, message){
                 this.x = x;
                 this.y = y;
                 this.color = color;
                 this.size = size;
-                this.num = num;
-                this.message = `${message} ${num}`;
+                this.message = `${message}`;
                 
             }
 
@@ -143,9 +142,10 @@ var Engine = (function(global) {
             }
         }
 
-        var life = new CanvasText(130, 610, "green", "16px tahoma","Powered by © Mohamed Shawky");
-        life.draw();
-        */
+        var copyright = new CanvasText(130, 610, "green", "16px tahoma","Powered by © Mohamed Shawky");
+        copyright.draw();
+        var email = new CanvasText(115, 630, "green", "16px tahoma","Mohamedshawkybayoumi@gmail.com");
+        email.draw();        
 
  
         /* Loop through the number of rows and columns we've defined above
