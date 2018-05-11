@@ -139,6 +139,10 @@ class Player {
             this.y += 80;
         }
 
+    }
+
+    mobileKeys(){
+
         // Arrows for mobile devices
 
         var mobileUp = document.querySelector('.mobile-up');
@@ -166,8 +170,6 @@ class Player {
                 this.x += 100;
             }
         });
-        
-
 
     }
 }
@@ -238,3 +240,6 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+// This is for run mobile arrows event listeners
+player.mobileKeys();
