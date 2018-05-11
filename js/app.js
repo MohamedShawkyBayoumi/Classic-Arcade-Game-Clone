@@ -175,16 +175,29 @@ class Player {
 }
 
 
+// Gem class
+class Gem {
+    constructor(x, y){
+        this.sprite = 'images/gem-blue.png';
+        this.x = x;
+        this.y = y;
+    }
+
+    render(){
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+
+    update(){
+
+    }
+}
+
 
 
 
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-
-for(var i=0; i < 4; i++){
-    var enemyS = Math.floor(Math.random() * 500 + 200);
-}
 
 
 var allEnemies = [
@@ -196,37 +209,10 @@ var allEnemies = [
 
 var player = new Player();
 
+// instantiate golds
+var gemBlue = new Gem(120, 450);
 
 
-
-
-/*
-
-//life text 
-var xLifePosition = 20;
-var yLifePosition = 30;
-var lifeNum = 5;
-var lifeTextColor = "green";
-var lifeTextSize = "20px tahoma";
-var lifeMessage = `Life : ${lifeNum}`;
-
-//score text
-var xScorePosition = 400;
-var yScorePosition = 30;
-var scoreNum = 0;
-var scoreTextColor = "brown";
-var scoreTextSize = "20px tahoma";
-var scoreMessage = `Score : ${scoreNum}`;
-
-//copyright message
-var xCopyPosition = 120;
-var yCopyPosition = 615;
-var copyNum = 0;
-var copyTextColor = "black";
-var copyTextSize = "20px tahoma";
-var copyMessage = `Powered by Mohamed Shawky`;
-
-*/
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
