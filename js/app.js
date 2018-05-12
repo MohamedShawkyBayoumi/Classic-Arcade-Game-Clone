@@ -104,45 +104,20 @@ class Player {
         var charPrincessGirl = document.querySelector('.char-princess-girl');
 
         charBoy.addEventListener('click',() =>{
-            charBoy.classList.toggle("underline");
-            charCatGirl.classList.remove("underline");
-            charHornGirl.classList.remove("underline");
-            charPinkGirl.classList.remove("underline");
-            charPrincessGirl.classList.remove('underline');
             this.sprite = "images/char-boy.png";
         });
         charCatGirl.addEventListener('click',() => {
-            charCatGirl.classList.toggle("underline");
-            charBoy.classList.remove("underline");
-            charHornGirl.classList.remove("underline");
-            charPinkGirl.classList.remove("underline");
-            charPrincessGirl.classList.remove('underline');
             this.sprite = "images/char-cat-girl.png";
 
         });
 
         charHornGirl.addEventListener('click',() => {
-            charHornGirl.classList.toggle("underline");
-            charBoy.classList.remove("underline");
-            charCatGirl.classList.remove("underline");
-            charPinkGirl.classList.remove("underline");
-            charPrincessGirl.classList.remove('underline');
             this.sprite = "images/char-horn-girl.png";
         });
         charPinkGirl.addEventListener('click',() => {
-            charPinkGirl.classList.toggle("underline");
-             charBoy.classList.remove("underline");
-            charCatGirl.classList.remove("underline");
-            charHornGirl.classList.remove("underline");
-            charPrincessGirl.classList.remove('underline');
             this.sprite = "images/char-pink-girl.png";
         });
         charPrincessGirl.addEventListener('click',() => {
-            charPrincessGirl.classList.toggle('underline');
-            charBoy.classList.remove("underline");
-            charCatGirl.classList.remove("underline");
-            charHornGirl.classList.remove("underline");
-            charPinkGirl.classList.remove("underline");
             this.sprite = "images/char-princess-girl.png";
         });
 
