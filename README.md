@@ -8,6 +8,8 @@
 
 ## Instructions
 
+-to player clone the game using ```$ git clone``` and then load index.hrml file in your browser
+
 -you should select any player you want to play with
 
 -you shouldn't crash any bugs to don't lose lives
@@ -21,9 +23,9 @@
 The app is built with the following code dependencies:
 
 1. Canvas
-1. Vanilla JavaScript
-1. Responseive css
+2. Vanilla JavaScript
+3. Responsive css
 
-## Licence
+## License
 
 -It's available to use it , to know more please read this [licence guide](https://choosealicense.com/licenses/mit/)

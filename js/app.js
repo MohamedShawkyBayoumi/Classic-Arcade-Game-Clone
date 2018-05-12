@@ -5,12 +5,6 @@ var closeOver = document.querySelector('.close-over');
 var modal = document.querySelector('.modal');
 var modalOver = document.querySelector('.modal-over');
 
-// pythagorean theorem for collisions
-var getDistance = (x1, y1, x2, y2) => {
-    var xDistance = x2 - x1;
-    var yDistance = y2 - y1;
-    return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
-}
 
 // Enemies our player must avoid
 var Enemy = function(y, speed) {
@@ -66,8 +60,9 @@ class Player {
         life.innerHTML = `Life x${this.life}`;
 
         allEnemies.forEach(enemy => {
-            var distance = getDistance(this.x, this.y,enemy.x, enemy.y);
-            if(distance < 40){
+            //var distance = getDistance(this.x, this.y,enemy.x, enemy.y);
+            let playerDistance = player.getDistance(this.x, this.y,enemy.x, enemy.y);
+            if(playerDistance < 40){
                 this.x = 200;
                 this.y = 380;
                 var crashSounds = document.querySelector('.crash-sounds');
@@ -96,8 +91,6 @@ class Player {
                 }
             }    
         });
-
-
         // select character
         var charBoy = document.querySelector('.char-boy');
         var charCatGirl = document.querySelector('.char-cat-girl');
@@ -128,6 +121,13 @@ class Player {
 
     render(){
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+
+    getDistance(x1, y1, x2, y2){
+        // pythagorean theorem for collisions
+            var xDistance = x2 - x1;
+            var yDistance = y2 - y1;
+            return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
     }
 
     handleInput(allowedKeys){
@@ -193,7 +193,8 @@ class Gem {
     }
 
     update(dt){
-        var gemDistance = getDistance(this.x, this.y, player.x, player.y);
+        //var gemDistance = getDistance(this.x, this.y, player.x, player.y);
+        let gemDistance =player.getDistance(this.x, this.y, player.x, player.y);
 
         var score = document.querySelector('.score');
         score.innerHTML = `Score :${this.score}`;
@@ -231,6 +232,7 @@ class Gem {
             }
 
             if(player.y == -20){
+
                 modal.style.display = 'block';
                 var winningSound = document.querySelector('.winning-sound');
                 winningSound.innerHTML = '<audio class="crash-sound" autoplay><source src="images/winning.mp3" type="audio/mpeg"></audio>';
