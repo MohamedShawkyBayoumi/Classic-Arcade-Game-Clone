@@ -79,6 +79,8 @@ class Player {
                     if(this.life == 0){
                         this.life = 5;
                         gem.score = 0;
+                        player.x = 200;
+                        player.y = 380;
                         modalOver.style.display = 'block';
                         playAgainOver.addEventListener('click',() => {
                             modalOver.style.display = 'none';
@@ -228,7 +230,7 @@ class Gem {
                 score.innerHTML = `Score :${this.score +=100}`;
             }
 
-            if(player.y == 60){
+            if(player.y == -20){
                 modal.style.display = 'block';
                 var winningSound = document.querySelector('.winning-sound');
                 winningSound.innerHTML = '<audio class="crash-sound" autoplay><source src="images/winning.mp3" type="audio/mpeg"></audio>';
