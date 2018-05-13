@@ -54,14 +54,12 @@ class Player {
 
     update(dt){
         // (Handles collision with the Player)
-
-
         var life = document.querySelector('.life');
         life.innerHTML = `Life x${this.life}`;
 
         allEnemies.forEach(enemy => {
             //var distance = getDistance(this.x, this.y,enemy.x, enemy.y);
-            let playerDistance = player.getDistance(this.x, this.y,enemy.x, enemy.y);
+            let playerDistance = this.getDistance(this.x, this.y,enemy.x, enemy.y);
             if(playerDistance < 40){
                 this.x = 200;
                 this.y = 380;
@@ -74,8 +72,8 @@ class Player {
                     if(this.life == 0){
                         this.life = 5;
                         gem.score = 0;
-                        player.x = 200;
-                        player.y = 380;
+                        this.x = 200;
+                        this.y = 380;
                         modalOver.style.display = 'block';
                         playAgainOver.addEventListener('click',() => {
                             modalOver.style.display = 'none';
